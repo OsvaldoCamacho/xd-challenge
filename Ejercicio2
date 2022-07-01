@@ -1,0 +1,20 @@
+1. ¿Cuál es el nombre aeropuerto que ha tenido mayor movimiento durante el año?
+   R= Benito Juárez y La Paz
+   Query = select a.nombre_aeropuerto,count(*) from registers r 
+          left join aeropuerto a on a.idaeropuerto = r.idaeropuerto group by a.nombre_aeropuerto
+
+2. ¿Cuál es el nombre aerolínea que ha realizado mayor número de vuelos durante
+el año?
+   R= Aeromar e Interjet
+   Query = select a.nombre_aerolinea,count(*) from registers r left join aerolinea a on a.idaerolinea = r.idaerolinea 
+           group by a.nombre_aerolinea
+
+
+3. ¿En qué día se han tenido mayor número de vuelos?
+   R= 2021-05-02
+   Query = select r.dia,count(*) from registers r 
+           group by r.dia 
+
+
+4. ¿Cuáles son las aerolíneas que tienen mas de 2 vuelos por día?
+   R= Ninguna , en los registros las aeolíneas llegan máximo a 2 vuelos por día
